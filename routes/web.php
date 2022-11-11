@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ResizeImagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('resize_image', [ResizeImagesController::class, 'resizeImage']);
+Route::post('resize_image', [ResizeImagesController::class, 'uploadimage'])->name('resize_image');
